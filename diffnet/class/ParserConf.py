@@ -21,8 +21,13 @@ class ParserConf():
 
         if value != None:
             if dtype == 'string':
-                # 两个操作：1.为self对象(ParserConf)添加成员key，赋值为value[0]
-                # 2.为conf_dict[key]赋值
+                '''
+                两个操作：
+                1.为self对象(ParserConf)添加成员key，赋值为value[0]
+                2.为conf_dict[key]赋值
+                
+                '''
+
                 self.conf_dict[key] = vars(self)[key] = value[0]
             elif dtype == 'int':
                 self.conf_dict[key] = vars(self)[key] = int(value[0])
