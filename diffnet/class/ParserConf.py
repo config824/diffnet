@@ -4,7 +4,7 @@
     released date: 04/18/2019
 '''
 
-import ConfigParser as cp
+import configparser as cp
 import re, os
 
 class ParserConf():

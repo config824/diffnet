@@ -5,7 +5,7 @@
 '''
 
 import os, shutil
-import ConfigParser as cp
+import configparser as cp
 
 class Logging():
     def __init__(self, filename):
