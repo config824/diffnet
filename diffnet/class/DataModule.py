@@ -58,8 +58,18 @@ class DataModule():
 ###########################################  Ranking ############################################
     def readData(self):
         f = open(self.filename) ## May should be specific for different subtasks
+        #  函数创建一个无序不重复元素集，可进行关系测试，删除重复数据，还可以计算交集、差集、并集等
         total_user_list = set()
+        '''
+        当字典里的key不存在但被查找时，返回的不是keyError而是一个默认值,
+        defaultdict接受一个工厂函数作为参数,这个factory_function可以是list、set、str等等，
+        作用是当key不存在时，返回的是工厂函数的默认值，比如list对应[ ]，
+        str对应的是空字符串，set对应set( )，int对应0
+        
+        '''
         hash_data = defaultdict(int)
+        # enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，
+        # 同时列出数据和数据下标
         for _, line in enumerate(f):
             arr = line.split("\t")
             hash_data[(int(arr[0]), int(arr[1]))] = 1
